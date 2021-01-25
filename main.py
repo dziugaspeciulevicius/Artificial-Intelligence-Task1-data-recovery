@@ -32,9 +32,10 @@ else:
     # fills the NaN value with average of the gender
     df.fillna(mean, inplace=True)
 
-# write updated data into a file
-df.to_csv('updated_data.csv')
-
 # print sorted by weight data
 print('\n SORTED DATA BY WEIGHT WITH CALCULATED MISSING VALUES: ')
 print(df.sort_values('Weight', ascending=True).to_string(index=False))
+
+# write updated data into a file
+df.to_csv('updated_data.csv', index=False)
+print('\n\n\n *** Updated data has been saved into updated_data.csv *** \n\n\n')
