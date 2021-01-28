@@ -1,7 +1,7 @@
 Name,Gender,Height,Weight
 Name1,0,165,55
-Name2,1,183,95
+Name2,1,,95
 Name3,0,171,60
 Name4,1,194,102
-Name5,1,,80
+Name5,1,178,80
 Name6,1,185,90

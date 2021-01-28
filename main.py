@@ -38,7 +38,7 @@ print(df.sort_values('Weight', ascending=True).to_string(index=False))
 
 
 def ask_user(question):
-    check = str(input("Question ? (Y/N): ")).lower().strip()
+    check = str(input("\n Do you want to save/overwrite updated info into a file? (Y/N): ")).lower().strip()
     try:
         if check[0] == 'y':
             return True
@@ -53,9 +53,10 @@ def ask_user(question):
         return ask_user()
 
 
-if ask_user("Do you want to save/overwrite updated info into a file?"):
+if ask_user("\n Do you want to save/overwrite updated info into a file?"):
     # write updated data into a file
-    df.to_csv('updated_data.csv', index=False)
+    df.to_csv('updated_data.csv', date_format='%s', index=False)
+    # df.sort_values("Weight", ascending=True).to_csv('updated_data.csv', date_format='%s', index=False)
     print('\n\n\n *** Updated data has been saved into updated_data.csv *** \n\n\n')
 else:
     print('\n\n\n *** Data has not been saved *** \n\n\n')
